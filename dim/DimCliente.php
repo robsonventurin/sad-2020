@@ -18,6 +18,8 @@ class DimCliente{
       $sqlDim = $connDimensao->prepare('select SK_cliente, cpf, nome, sexo, idade, rua, bairro,
                                         cidade, uf
                                         from dim_cliente');
+
+                                        
       $sqlDim->execute();
       $result = $sqlDim->get_result();
       if($result->num_rows === 0){//Dimensão está
